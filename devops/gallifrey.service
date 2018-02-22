@@ -1,0 +1,13 @@
+[Unit]
+Description=Gallifrey container
+After=docker.socket early-docker.target network.target network-online.target
+Wants=network-online.target
+BindsTo=docker.service
+
+[Service]
+Restart=always
+ExecStart=/usr/bin/docker-compose -f /opt/gallifrey/docker-compose.yml -p gallifrey up
+ExecStop=/usr/bin/docker-compose -f /opt/gallifrey/docker-compose.yml -p gallifrey down
+
+[Install]
+WantedBy=multi-user.target
