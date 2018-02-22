@@ -1,0 +1,2 @@
+lein uberjar
+cp -f ../../target/gallifrey.jar .

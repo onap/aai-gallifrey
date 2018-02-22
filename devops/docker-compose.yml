@@ -1,0 +1,20 @@
+rethinkdb:
+  image: rethinkdb
+  container_name: rethinkdb
+  volumes:
+    - /opt/gallifrey/db:/data
+
+gallifrey:
+  build: ./gallifrey
+  container_name: gallifrey
+  links:
+    - rethinkdb
+
+nginx:
+  build: ./nginx
+  container_name: nginx
+  links:
+    - gallifrey
+  ports:
+    - 80:80
+    - 443:443
