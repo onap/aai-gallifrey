@@ -17,6 +17,8 @@
 
                  [integrant "0.6.2"]
                  [clojure-future-spec "1.9.0-beta4"]
+                 [metrics-clojure "2.10.0"]
+                 [metrics-clojure-ring "2.10.0"]
                  [yogthos/config "0.9"]]
   :min-lein-version "2.5.3"
   :profiles {:dev {:source-paths ["dev"]
