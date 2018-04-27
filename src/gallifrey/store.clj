@@ -1,4 +1,3 @@
-
 (ns gallifrey.store
   (:require [utilis.map :refer [compact map-keys map-vals]]
             [utilis.types.keyword :refer [->keyword]]

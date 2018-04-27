@@ -40,14 +40,15 @@
                 (when (#{:put :delete} (-> ctx :request :request-method))
                   (-> ctx :request :params :actor empty?)))
   :exists? (fn [ctx]
-             (if-let [resource (store/get-entity @the-store type id
-                                                 :t-t (parse-ts ctx :t-t) :t-k (parse-ts ctx :t-k))]
-               {::resource ((case type
-                              "entity" serialize-entity
-                              "relationship" serialize-relationship) resource)}
-               (when (and (= :put (-> ctx :request :request-method))
-                          (-> ctx :request :params :create not-empty))
-                 true)))
+             (let [put? (= :put (-> ctx :request :request-method))]
+               (if-let [resource (if put?
+                                   (store/get-entity @the-store type id :t-k (parse-ts ctx :t-k))
+                                   (store/get-entity @the-store type id
+                                                     :t-t (parse-ts ctx :t-t) :t-k (parse-ts ctx :t-k)))]
+                 {::resource ((case type
+                                "entity" serialize-entity
+                                "relationship" serialize-relationship) resource)}
+                 (when (and put? (-> ctx :request :params :create not-empty)) true))))
   :existed? (fn [ctx] (entity-existed? type id :t-k (parse-ts ctx :t-k)))
   :handle-ok ::resource
   :can-put-to-missing? false
@@ -80,11 +81,11 @@
              (when-let [resource (not-empty
                                   (store/entity-history @the-store type id))]
                {::resource (map-vals (partial map #(-> %
-                                                       (update :k-start str)
-                                                       (update :k-end str)
-                                                       (update :t-start str)
-                                                       (update :t-end str)
-                                                       compact)) resource)}))
+                                                 (update :k-start str)
+                                                 (update :k-end str)
+                                                 (update :t-start str)
+                                                 (update :t-end str)
+                                                 compact)) resource)}))
   :handle-ok ::resource)
 
 (defresource entity-lifespan-endpoint [type id]
