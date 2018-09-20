@@ -2,4 +2,4 @@
 
 set -e
 
-java -jar /opt/gallifrey/gallifrey.jar
+java -jar /opt/gallifrey/gallifrey-*.jar

@@ -5,7 +5,7 @@ ENV JAVA_VERSION_MAJOR 8
 ENV JAVA_VERSION_MINOR 131
 ENV JAVA_VERSION_BUILD 11
 ENV JAVA_PACKAGE       jre
-ENV GLIBC_VERSION      2.25-r0
+ENV GLIBC_VERSION      2.28-r0
 
 ENV JAVA_8_BASE_URL http://download.oracle.com/otn-pub/java/jdk/${JAVA_VERSION_MAJOR}u${JAVA_VERSION_MINOR}-b${JAVA_VERSION_BUILD}/d54c1d3a095b4ff2b6607d096fa80163/${JAVA_PACKAGE}-${JAVA_VERSION_MAJOR}u${JAVA_VERSION_MINOR}
 
@@ -13,10 +13,10 @@ RUN apk update
 RUN apk add curl
 
 # Install glibc (required for java)
-RUN curl -jsSL -o /etc/apk/keys/sgerrand.rsa.pub https://raw.githubusercontent.com/sgerrand/alpine-pkg-glibc/master/sgerrand.rsa.pub && \
-    curl -jsSL -O https://github.com/sgerrand/alpine-pkg-glibc/releases/download/${GLIBC_VERSION}/glibc-${GLIBC_VERSION}.apk && \
-    apk add glibc-${GLIBC_VERSION}.apk && \
-    rm -f glibc-${GLIBC_VERSION}.apk
+RUN apk --no-cache add ca-certificates wget && \
+    wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub && \
+    wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/${GLIBC_VERSION}/glibc-${GLIBC_VERSION}.apk && \
+    apk add glibc-${GLIBC_VERSION}.apk
 
 # Install Java
 RUN mkdir /opt && \
@@ -38,8 +38,8 @@ RUN apk add zip openssh-keygen openssh-client
 EXPOSE 8080
 
 RUN mkdir -p /opt/gallifrey
-COPY gallifrey.jar /opt/gallifrey
+COPY target/gallifrey-*.jar /opt/gallifrey
 
-COPY ./docker-entrypoint.sh /
+COPY ./devops/gallifrey/docker-entrypoint.sh /
 RUN chmod 700 /docker-entrypoint.sh
 ENTRYPOINT ["/docker-entrypoint.sh"]
