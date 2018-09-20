@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a76adc5_5e2fee3e",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 481
+      },
+      "writtenOn": "2018-09-20T19:15:48Z",
+      "side": 1,
+      "message": "org.onap.aai",
+      "range": {
+        "startLine": 3,
+        "startChar": 11,
+        "endLine": 3,
+        "endChar": 20
+      },
+      "revId": "2a921ed1e1daaf2f36dbdbb316370cf344ec49c7",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_1e25f65a",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 481
+      },
+      "writtenOn": "2018-09-20T19:15:48Z",
+      "side": 1,
+      "message": "These tags look out of place. \n\nWe need to put all dependencies described below in between \n\u003cdependencyManagement\u003e  ... \u003c/dependencyManagement\u003e",
+      "range": {
+        "startLine": 162,
+        "startChar": 0,
+        "endLine": 164,
+        "endChar": 25
+      },
+      "revId": "2a921ed1e1daaf2f36dbdbb316370cf344ec49c7",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
