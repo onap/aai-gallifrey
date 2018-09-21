@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>gallifrey</groupId>
+  <groupId>org.onap.aai</groupId>
   <artifactId>gallifrey</artifactId>
   <packaging>jar</packaging>
   <version>1.3.0-SNAPSHOT</version>
   <name>aai-gallifrey</name>
   <description/>
   <scm>
-    <tag>330f1cb56cfafd1508438139dadc7cc645262ec6</tag>
+    <tag>2a921ed1e1daaf2f36dbdbb316370cf344ec49c7</tag>
   </scm>
   <build>
     <sourceDirectory>src</sourceDirectory>
