@@ -4,7 +4,7 @@
                  [com.7theta/utilis "1.0.4"]
 
                  [http-kit "2.2.0"]
-                 [ring/ring-core "1.6.3"]
+                 [ring/ring-core "1.7.1"]
                  [ring/ring-defaults "0.3.1"]
                  [ring/ring-anti-forgery "1.1.0"]
                  [compojure "1.6.0"]
