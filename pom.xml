@@ -7,7 +7,7 @@
   <name>aai-gallifrey</name>
   <description/>
   <scm>
-    <tag>2a921ed1e1daaf2f36dbdbb316370cf344ec49c7</tag>
+    <tag>4171e35d4ea5d28e7ffd8bb6406d56568dbefa64</tag>
   </scm>
   <build>
     <sourceDirectory>src</sourceDirectory>
@@ -181,7 +181,7 @@
     <dependency>
       <groupId>ring</groupId>
       <artifactId>ring-core</artifactId>
-      <version>1.6.3</version>
+      <version>1.7.1</version>
     </dependency>
     <dependency>
       <groupId>ring</groupId>
