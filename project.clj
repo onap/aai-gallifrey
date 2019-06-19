@@ -1,4 +1,4 @@
-(defproject org.onap.aai/gallifrey "1.4.0-SNAPSHOT"
+(defproject org.onap.aai/gallifrey "1.5.0-SNAPSHOT"
   :dependencies [[org.clojure/clojure "1.8.0"]
 
                  [com.7theta/utilis "1.0.4"]
