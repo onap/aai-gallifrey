@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d88452e6_5bcd5a5d",
+        "filename": "pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 347
+      },
+      "writtenOn": "2019-06-19T20:24:34Z",
+      "side": 1,
+      "message": "Please also change the corresponding value in project.clj (or instruct me on how to contribute to your PR...made badness when I tried to do it before).  ;\u003e",
+      "revId": "a38439e71fee50c3afc04184da89cae395b60a55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
