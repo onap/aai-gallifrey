@@ -57,11 +57,7 @@
                  {:executions ([:execution [:id "copy-dependencies"]
                                 [:goals ([:goal "copy-dependencies"])]
                                 [:phase "package"]])}]
-                [org.sonatype.plugins/nexus-staging-maven-plugin "1.6.7"
-                 {:extensions true
-                  :configuration ([:nexusUrl "https://nexus.onap.org"]
-                                  [:stagingProfileId "176c31dfe190a"]
-                                  [:serverId "ecomp-staging"])}]
+                [org.apache.maven.plugins/maven-deploy-plugin "3.0.0-M1"]
                 [org.apache.maven.plugins/maven-shade-plugin "3.2.0"
                  {:executions ([:execution
                                 [:phase "package"]
